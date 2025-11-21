@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Template</title>
+  </head>
+  <body>
+    <script>
+      /* 
+        string template: agar tidak menggunakan +(plus) untuk menggabungkan string
+        note: gunakan backtick(`), bisa juga dikasih expression, bisa multiline 
+      */
+
+      const firstName = "Mukhlis";
+      const lastName = "Khoirudin";
+      const umur = 22;
+      const fullname = `Nama: ${firstName} ${lastName}, Umur: ${umur < 18}`;
+
+      console.info(fullname);
+    </script>
+  </body>
+</html>
