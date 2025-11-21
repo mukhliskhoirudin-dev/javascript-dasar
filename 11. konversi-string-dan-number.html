@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi String dan Number</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Number(string) = mengkonversi dari string ke number (bilangan bulat dan pecahan) bisa keduanya
+        parseInt(string) = mengkonversi dari string ke number (bilangan bulat)
+        parseFloat(string) = mengkonversi dari string ke number (bilangan pecahan)
+        number.toString() = mengkonversi dari number ke string
+
+        note: gunakan konversi parseInt/parseFloat agar saat konversi ada kesalahan di belakang tidak terjadi NaN dan bisa di toleransi
+              kalau konversi menggunakan Number ada kesalahan di belakang akan tetap menjadi NaN
+
+        note: bisa juga dilakukan pengecekan, apakah NaN atau bukan dengan isNaN()
+      */
+
+      const value1 = parseInt("1");
+      const value2 = 1;
+      const total = value1 + value2;
+      document.writeln(`${total}`);
+      document.writeln("<br>");
+
+      document.writeln(`${parseInt("2.5")}`);
+      document.writeln("<br>");
+
+      document.writeln(`${parseFloat("1.2")}`);
+      document.writeln("<br>");
+
+      document.writeln(`${Number("1.5")}`);
+      document.writeln("<br>");
+
+      //mengkonversi dari number ke string
+      const a = 1;
+      const b = 1;
+      const jumlah = a.toString() + b.toString();
+      document.writeln(`${jumlah}`);
+      document.writeln("<br>");
+
+      //NaN = not a number (bukan number), ini kalau pakai parseInt dan parseFloat ini masih bisa di toleransi asal salahnya di belakang
+      document.writeln(`${parseInt("1.5salah")}`);
+      document.writeln("<br>");
+
+      document.writeln(`${parseFloat("1.2sss")}`);
+      document.writeln("<br>");
+
+      //mote: kalau pake konversi Number dia tidak ada toleransi, salahnya dimana, tetap NaN walaupun salah di belakang
+      document.writeln(`${Number("haha")}`);
+      document.writeln("<br>");
+    </script>
+  </body>
+</html>
