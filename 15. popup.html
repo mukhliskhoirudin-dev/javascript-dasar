@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup</title>
+  </head>
+  <body>
+    <script>
+      //alert, confirm, prompt
+
+      //alert
+      alert("Ini isi text alert");
+
+      //prompt
+      const name = prompt("Siapa nama anda?");
+      alert(`Hello ${name}`);
+
+      //confirm
+      const masuk = confirm("Apakah anda ingin masuk?");
+      if (masuk) {
+        const name = prompt("Siapa nama anda?");
+        alert(`Hello ${name}`);
+      } else {
+        alert("Selamat Tinggal");
+      }
+    </script>
+  </body>
+</html>
