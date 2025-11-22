@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falsy dan Truthy</title>
+  </head>
+  <body>
+    <script>
+      // Falsy adalah value yang ketika dalam konteks boolean dia dianggap false
+      // Truthy adalah kebalikannya
+
+      /* data yang dianggap Falsy 
+          false = boolean false
+          0, -0 = number 0 dan -0 dianggap false
+          "",", ``  = semua string kosong dianggap false (string pakai petik juga di anggap false)
+          null = null dianggap false
+          undefined = undefined dianggap false
+          NaN = Not a Number dianggap false
+      */
+
+      let data = ""; //ini false karna ("")
+
+      if (data) {
+        document.writeln("TRUE");
+      } else {
+        document.writeln("FALSE");
+      }
+    </script>
+  </body>
+</html>

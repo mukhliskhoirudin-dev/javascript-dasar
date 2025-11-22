@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator logika di non boolean</title>
+  </head>
+  <body>
+    <script>
+      // berkaitan dengan falsy dan truthy materi sebelumnya
+      // kita bisa menggunakan operator logika AND dan OR untuk tipe data bukan boolean
+
+      // operator or (||) di non boolean: (intinya dia fokus ngambil truthy)
+      // operator ini akan mengambil nilai pertama yang truthy, dibaca dari kiri ke kanan, jika tidak ada satupun yang truthy maka yang terakhir/kanan diambil
+      console.info("hello" || ""); //maka akan mengambil hello karna hello adalah truthy
+      console.info("" || []); //maka akan mengambil array karna array adalah truthy
+      console.info("0" || "NOL"); //sama truthy jadi di ambil yang pertama
+      console.info(0 || "NOL"); //maka akan diambil NOL karna string NOL adalah truthy
+      console.info(null || "NULL"); //maka akan diambil NULL karna string NULL adalah truthy
+      console.info(null || "UNDEFINED"); //maka akan diambil UNDEFINED karna string UNDEFINED adalah truthy
+      console.info(0 || false); //karna 2 2 falsy maka yang terakhir diambil
+
+      //contoh penggunaan: kek penggunaan nullish coalescing tapi bedanya ini bisa di gunakan di non boolean
+      const person = {
+        firstName: "Mukhlis",
+        lastName: "Khoirudin",
+      };
+
+      const name = person.firstName || person.lastName;
+      console.info(name); //maka yang diambil Mukhlis, karna sama-sama truthy, jadi ambil yang pertama
+
+      // operator and (&&) di non boolean: (intinya dia fokus ngambil falsy)
+      // operator ini akan mengambil nilai pertama yang falsy, dibaca dari kiri ke kanan, jika tidak ada satupun yang falsy maka yang terakhir/kanan diambil
+      console.info("HELLO" && " "); // maka akan mengambil " " karna string kosong adalah falsy
+      console.info("" && []); // maka yang diambil " "
+      console.info("0" && "NOL"); //maka yang diambil NOL, ambil yang akhir karan sama2 truthy
+      console.info(null && "NULL"); //null
+      console.info(undefined && "UNDEFINED"); //undefined
+      console.info("undefined" && "null"); //null
+    </script>
+  </body>
+</html>
