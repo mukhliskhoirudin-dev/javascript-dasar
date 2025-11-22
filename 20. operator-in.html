@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator In</title>
+  </head>
+  <body>
+    <script>
+      // in operator adalah operator yang bisa dilakukan untuk mengecek apakah sebuah property ada di dalam object atau tidak, jika iya true, tidak tidak false
+
+      //note: akan terap menganggap true walaupun null atau undefined, karna dia ngecek property
+
+      const person = {
+        firstName: "Mukhlis",
+        lastNmae: "Khoirudin",
+      };
+
+      if ("firstName" in person) {
+        alert(`Hallo ${person.firstName}`);
+      } else {
+        alert("Gak ada property firstName");
+      }
+    </script>
+  </body>
+</html>
