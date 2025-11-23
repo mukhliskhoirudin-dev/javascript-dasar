@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Generator</title>
+  </head>
+  <body>
+    <script>
+      // function yang digunakan untuk membuat data generator
+      // data generator adalah tempat untuk me generate data (tambahakan * di depan function), dan untuk mengembalikan data setiap iterasi bisa gunakan yield
+
+      function* createNames() {
+        yield "Mukhlis";
+        yield "Khoirudin";
+        yield "Ganteng";
+      }
+
+      const names = createNames();
+
+      for (const name of names) {
+        console.log(name);
+      }
+
+      // jadi generator itu sifatnya lazy
+      // jika data belum kita ambil dari generator, maka yield selanjutnya tidak akan di eksekusi
+
+      //lazy
+      function* buatGanjil(value) {
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.info(`Yield ${i}`);
+            yield i;
+          }
+        }
+      }
+
+      const angkaGanjil = buatGanjil(100);
+      for (const angka of angkaGanjil) {
+        console.log(angka);
+      }
+
+      //eager
+      function buatGanjilArray(value) {
+        const result = [];
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.info(`Yield ${i}`);
+            result.push(i);
+          }
+        }
+        return result;
+      }
+
+      const numbers = buatGanjilArray(100);
+      // for (const number of numbers) {
+      //   console.info(number);
+      // }
+    </script>
+  </body>
+</html>
