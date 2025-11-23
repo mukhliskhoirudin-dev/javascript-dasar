@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break dan Continue</title>
+  </head>
+  <body>
+    <script>
+      // brake digunakan untuk memberhentikan perulangan
+
+      //break: memberhentikan total perulangan
+      let counter = 1;
+      while (true) {
+        document.writeln(`<p> Perulangan ke ${counter} </p>`);
+        counter++;
+
+        if (counter > 10) {
+          break; //kasih brake untuk memberhentikan perulangan, kasusnya infinity loop
+        }
+      }
+
+      //continue: memberhentikan kemudian lanjut ke perulangan selanjutnya
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+          continue; //jadi kalau modulus sisa baginya 0, di dilanjut/skip yang eksesuki bawanya, lalu ngulang lagi
+        }
+
+        document.writeln(`<p> Perulangan Ganjil ${i} </p>`);
+      }
+    </script>
+  </body>
+</html>
