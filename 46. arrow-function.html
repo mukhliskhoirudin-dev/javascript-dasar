@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      // pembuatan function yang lebih sederhana
+      // kekurangan:
+      // 1. tidak memiliki fitur arguments object
+      // 2. tidak bisa menggunakan function generator
+      // 3. tidak bisa mengakses this
+
+      //contoh arrow function
+      const sayHello = (name) => {
+        const say = `Hello ${name}`;
+        console.info(say);
+      };
+
+      sayHello("Mukhlis");
+
+      // contoh arrow function tanpa block
+      // jika sebuah arrow function isinya sederhana, misal hanya satu baris
+      // kita bisa membuat arrow function tanpa harus menggunakan block / tanpa {}, (dengan syrat satu baris)
+      const sayHay = (name) => console.info(`Hay ${name}`);
+      sayHay("Mukhlis");
+
+      // arrow function return value
+      // jika menggunakan block, maka kita perlu menggunakan kata kunci return
+      // jika tidak menggunakan block/satu baris, kita tidak perlu menggunakan kata kunci return
+      const sum = (first, secound) => first + secound;
+      console.info(sum(100, 10));
+
+      // arrow function sebagai parameter
+      function giveMeName(callback) {
+        callback("Mukhlis");
+      }
+
+      //anonymous function
+      //   giveMeName(function (name) {
+      //     console.info(`Hello ${name}`);
+      //   });
+
+      //arrow function
+      giveMeName((name) => console.info(`Hello ${name}`));
+    </script>
+  </body>
+</html>
